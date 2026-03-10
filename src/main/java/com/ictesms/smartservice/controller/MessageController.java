@@ -2,12 +2,12 @@ package com.ictesms.smartservice.controller;
 
 import com.ictesms.smartservice.dto.MessageRequest;
 import com.ictesms.smartservice.dto.MessageResponse;
-import com.ictesms.smartservice.entity.Message;
 import com.ictesms.smartservice.service.MessageService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/messages")
 public class MessageController {
