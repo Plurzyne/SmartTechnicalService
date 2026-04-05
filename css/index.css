@@ -1,0 +1,258 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========================= */
+/* 🔥 HEADER (CLEAN WHITE) */
+/* ========================= */
+/* ========================= */
+/* 🔥 NAVBAR DAHA BÖYÜK + GENİŞ */
+/* ========================= */
+
+/* Logo böyüsün */
+.headerLogo h1 {
+  color: #111;
+  font-size: 30px;
+}
+
+/* Navbar linklər */
+
+/* Search böyüsün */
+.headerSearch input {
+  height: 40px;
+  font-size: 15px;
+  border-radius: 12px;
+}
+
+/* ========================= */
+/* 🔥 ICONLAR DAHA BÖYÜK */
+/* ========================= */
+
+.iconBtn {
+  padding: 8px;
+}
+
+.imgIcon {
+  width: 22px;
+}
+
+/* ========================= */
+/* 🔥 ÜMUMİ FONT BÖYÜT */
+/* ========================= */
+
+body {
+  font-size: 15px;
+}
+
+.header {
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 50px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  transition: 0.3s;
+  border-bottom: 1px solid #eee;
+}
+
+/* Scroll olanda */
+.header.scrolled {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+
+/* ========================= */
+/* 🔥 SEARCH */
+/* ========================= */
+
+.headerSearch {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.headerSearch input {
+  width: 350px;
+  height: 36px;
+  border-radius: 10px;
+  border: none;
+  background: #f3f4f6;
+  padding: 0 15px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.headerSearch input:focus {
+  background: white;
+  outline: 2px solid #3b82f6;
+}
+
+/* ========================= */
+/* 🔥 NAVBAR */
+/* ========================= */
+
+.headerNavbar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Links */
+.headerNavbar a,
+.dropbtn {
+  font-size: 17px;
+  padding: 8px 12px;
+  color: #333;
+  text-decoration: none;
+  position: relative;
+  border-radius: 6px;
+  transition: 0.25s;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Soft hover */
+.headerNavbar a:hover,
+.dropbtn:hover {
+  background: #f1f5f9;
+  color: #2563eb;
+}
+
+/* Underline */
+.headerNavbar a::after,
+.dropbtn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: #2563eb;
+  transition: 0.3s;
+}
+
+.headerNavbar a:hover::after,
+.dropbtn:hover::after {
+  width: 100%;
+}
+
+/* ========================= */
+/* 🔥 DROPDOWN */
+/* ========================= */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background: white;
+  border-radius: 12px;
+  min-width: 170px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  animation: fadeIn 0.2s ease;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  padding: 12px 15px;
+  display: block;
+  color: #111;
+}
+
+.dropdown-content a:hover {
+  background: #f1f5f9;
+}
+
+/* ========================= */
+/* 🔥 ICONS */
+/* ========================= */
+
+.iconBtn {
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: 6px;
+  transition: 0.2s;
+}
+
+.iconBtn:hover {
+  background: #e0e7ff;
+  transform: scale(1.05);
+}
+
+.imgIcon {
+  width: 20px;
+}
+
+/* ========================= */
+/* 🔥 SIDE PANEL (SƏBƏT) */
+/* ========================= */
+
+.side-panel {
+  position: fixed;
+  top: 0;
+  right: -350px;
+  width: 350px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -3px 0 15px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  transition: 0.3s;
+  overflow-y: auto;
+}
+
+.side-panel.activebasket {
+  right: 0;
+}
+
+.panel-content {
+  padding: 20px;
+}
+
+.side-panel h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+/* ========================= */
+/* 🔥 ANIMATION */
+/* ========================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

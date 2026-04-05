@@ -1,0 +1,74 @@
+/* BODY */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f1f3f6;
+}
+
+/* CONTAINER (ortada olsun) */
+.editContainer {
+  margin-left: 260px; /* sidebar üçün */
+  padding: 40px;
+}
+
+/* CARD */
+.editForm {
+  width: 420px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* TITLE */
+.editForm h2 {
+  margin-bottom: 25px;
+  color: #2d4f9c;
+}
+
+/* INPUT GROUP */
+.inputGroup {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* LABEL */
+.inputGroup label {
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* INPUT */
+.inputGroup input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+
+/* FOCUS */
+.inputGroup input:focus {
+  border-color: #2d4f9c;
+}
+
+/* BUTTON */
+.saveBtn {
+  width: 100%;
+  padding: 12px;
+  background: #2d4f9c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* HOVER */
+.saveBtn:hover {
+  background: #1f3c7a;
+}

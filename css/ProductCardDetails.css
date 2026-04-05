@@ -1,0 +1,248 @@
+/* ========================= */
+/* 🔥 LAYOUT */
+/* ========================= */
+
+/* ========================= */
+/* 🔥 CENTER LAYOUT FIX */
+/* ========================= */
+
+.contant {
+  display: flex;
+  justify-content: center;
+}
+
+.product-details {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+.product-details {
+  display: flex;
+  gap: 50px;
+  padding: 40px 60px;
+  align-items: flex-start;
+}
+
+/* Image */
+.cardImg {
+  height: 450px;
+  object-fit: contain;
+  background: #f9fafb;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+/* ========================= */
+/* 🔥 RIGHT CARD */
+/* ========================= */
+
+.card {
+  width: 420px;
+}
+
+/* Info */
+.information {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Category */
+.card h5 {
+  display: inline-block;
+  background: #f3f4f6;
+  color: #555;
+  padding: 5px 12px;
+  border-radius: 8px;
+  border: none;
+  width: fit-content;
+}
+
+/* Title */
+.card h1 {
+  font-size: 26px;
+  color: #111;
+}
+
+/* ========================= */
+/* 🔥 COMMENT + STAR */
+/* ========================= */
+
+.commentStar {
+  display: flex;
+  gap: 20px;
+  color: #666;
+  font-size: 14px;
+}
+
+/* ========================= */
+/* 🔥 DISCOUNT BOX */
+/* ========================= */
+
+.redCard {
+  background: #2563eb;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 8px;
+  width: fit-content;
+  font-size: 14px;
+}
+
+/* ========================= */
+/* 🔥 PRICE */
+/* ========================= */
+
+.discountPercent {
+  font-size: 24px;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.real-price {
+  font-size: 14px;
+  text-decoration: line-through;
+  color: #999;
+  margin-left: 8px;
+}
+
+/* ========================= */
+/* 🔥 BUTTONS */
+/* ========================= */
+
+.add-to-cart {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px 0;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.add-to-cart:hover {
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+}
+
+.shareBtn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 10px;
+  border: none;
+  background: #f3f4f6;
+  color: #333;
+  transition: 0.3s;
+}
+
+.shareBtn:hover {
+  background: #e5e7eb;
+}
+
+/* ========================= */
+/* 🔥 ACCORDION */
+/* ========================= */
+
+.productAbout,
+.comment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9fafb;
+  padding: 12px 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 1px solid #eee;
+}
+
+.productAbout:hover,
+.comment:hover {
+  background: #f3f4f6;
+}
+
+/* Icon + text */
+.productAboutTextImg,
+.productCommentTextImg {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #333;
+}
+
+/* Plus icon */
+.plus {
+  background: #e5e7eb;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* ========================= */
+/* 🔥 DROPDOWN */
+/* ========================= */
+
+.dropdownBox {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: all 0.35s ease;
+  margin-left: 10px;
+  background: #f9fafb;
+  border-left: 3px solid #2563eb;
+  border-radius: 10px;
+}
+
+.dropdownBox.open {
+  max-height: 500px;
+  opacity: 1;
+  transform: translateY(0);
+  padding: 12px;
+  margin-top: 10px;
+}
+
+/* List */
+.dropdownBox ul li {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+/* ========================= */
+/* 🔥 REVIEW FORM */
+/* ========================= */
+
+.reviewForm textarea {
+  resize: none;
+  height: 80px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.reviewForm button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.reviewForm button:hover {
+  background: #1d4ed8;
+}
+
+/* ========================= */
+/* 🔥 STARS */
+/* ========================= */
+
+.starRating span {
+  color: #ddd;
+}
+
+.starRating span.active,
+.starRating span:hover {
+  color: gold;
+}

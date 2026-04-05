@@ -1,0 +1,248 @@
+/* ========================= */
+/* 🔥 PRODUCT GRID */
+/* ========================= */
+
+.allCard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  padding: 20px 40px;
+}
+
+/* ========================= */
+/* 🔥 CARD */
+/* ========================= */
+
+.product-card {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #f1f1f1;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+  transition: 0.3s;
+}
+
+/* Hover */
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* ========================= */
+/* 🔥 IMAGE */
+/* ========================= */
+
+.card-image {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  background: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-image img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+/* Discount badge */
+.discount-percent {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #22c55e;
+  color: white;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 8px;
+}
+
+/* ========================= */
+/* 🔥 CONTENT */
+/* ========================= */
+
+.card-info {
+  padding: 15px;
+}
+
+/* Category */
+.card-info h5 {
+  display: inline-block;
+  font-size: 13px;
+  color: #555;
+  background: #f3f4f6;
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 8px;
+}
+
+/* Title */
+.card-info h3 {
+  font-size: 17px;
+  color: #111;
+  margin: 8px 0;
+}
+
+/* ========================= */
+/* 🔥 PRICE */
+/* ========================= */
+
+.price {
+  margin: 8px 0;
+}
+
+.discountPercent {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2563eb; /* 🔥 mavi – sayta uyğun */
+}
+
+.real-price {
+  font-size: 14px;
+  text-decoration: line-through;
+  color: #999;
+  margin-left: 6px;
+}
+
+/* ========================= */
+/* 🔥 BUTTON */
+/* ========================= */
+
+.add-to-cart {
+  margin-top: 12px;
+  width: 100%;
+  padding: 10px 0;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+/* Hover */
+.add-to-cart:hover {
+  background: #1d4ed8;
+}
+
+/* ========================= */
+/* 🔥 TITLE SECTION */
+/* ========================= */
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 40px;
+}
+
+.title a {
+  font-size: 16px;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.title a:hover {
+  text-decoration: underline;
+}
+/* ========================= */
+/* 🔥 IMAGE HOVER ZOOM */
+/* ========================= */
+
+.card-image img {
+  transition: 0.4s ease;
+}
+
+.product-card:hover .card-image img {
+  transform: scale(1.08);
+}
+
+/* ========================= */
+/* 🔥 WISHLIST ICON */
+/* ========================= */
+
+.card-image::after {
+  content: "♡";
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 35px;
+  height: 35px;
+  background: white;
+  color: #999;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: 0.3s;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-card:hover .card-image::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Hover ❤️ */
+.card-image::after:hover {
+  color: #ef4444;
+}
+
+/* ========================= */
+/* 🔥 CARD GLOW EFFECT */
+/* ========================= */
+
+.product-card:hover {
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+}
+
+/* ========================= */
+/* 🔥 BUTTON NEXT LEVEL */
+/* ========================= */
+
+.add-to-cart {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+}
+
+/* Hover gradient */
+.add-to-cart:hover {
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+}
+
+/* Ripple effect */
+.add-to-cart::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.4s;
+}
+
+.add-to-cart:active::after {
+  width: 200px;
+  height: 200px;
+}
+
+/* ========================= */
+/* 🔥 SMOOTH TRANSITIONS */
+/* ========================= */
+
+.product-card * {
+  transition: 0.25s;
+}
