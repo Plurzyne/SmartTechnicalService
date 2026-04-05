@@ -29,7 +29,11 @@ public class UserService {
         user.setPhone(request.getPhone());
         user.setPassword(passwordEncoder.encode(request.getPassword()));
 
-        user.setRole(request.getRole());
+        if (request.isTechnician()) {
+            user.setRole("TECHNICIAN");
+        } else {
+            user.setRole("CUSTOMER");
+        }
 
         user.setLatitude(null);
         user.setLongitude(null);
@@ -48,5 +52,10 @@ public class UserService {
         }
 
         return user;
+    }
+
+    public User getUserById(Long id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User not found"));
     }
 }

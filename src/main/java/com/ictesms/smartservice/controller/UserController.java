@@ -17,7 +17,10 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
-
+    @GetMapping("/{id}")
+    public User getUserById(@PathVariable Long id) {
+        return userService.getUserById(id);
+    }
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody UserRegisterRequest request) {
 

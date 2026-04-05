@@ -1,14 +1,14 @@
 Endpoints:
 
-/devices \
+api/devices \
 POST / \
 GET /owner/{ownerId}
 
-/messages \
+api/messages \
 POST / \
 GET /chat/{chatId}
 
-/service-requests \
+api/service-requests \
 POST / \
 POST /{id}/escalate
 

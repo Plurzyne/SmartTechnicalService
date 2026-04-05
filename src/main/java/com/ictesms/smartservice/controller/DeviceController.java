@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/devices")
+@RequestMapping("/api/devices")
 public class DeviceController {
 
     private final DeviceService deviceService;
@@ -29,5 +30,21 @@ public class DeviceController {
     @GetMapping("/owner/{ownerId}")
     public List<Device> getDevicesByOwner(@PathVariable Long ownerId) {
         return deviceService.getDevicesByOwner(ownerId);
+    }
+
+    @PutMapping("/{deviceId}")
+    public Device updateDevice(@PathVariable Long deviceId,
+                               @RequestBody DeviceRequest request) {
+
+        return deviceService.updateDevice(
+                deviceId,
+                request.getDeviceName(),
+                request.getDeviceType()
+        );
+    }
+
+    @DeleteMapping("/{deviceId}")
+    public void deleteDevice(@PathVariable Long deviceId) {
+        deviceService.deleteDevice(deviceId);
     }
 }

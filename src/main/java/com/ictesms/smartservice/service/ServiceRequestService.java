@@ -10,6 +10,7 @@ import com.ictesms.smartservice.repository.ServiceRequestRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class ServiceRequestService {
@@ -24,6 +25,10 @@ public class ServiceRequestService {
         this.serviceRequestRepository = serviceRequestRepository;
         this.chatRepository = chatRepository;
         this.deviceRepository = deviceRepository;
+    }
+
+    public List<ServiceRequest> getRequestsByUser(Long userId) {
+        return serviceRequestRepository.findByUserId(userId);
     }
 
     public ServiceRequest createServiceRequest(Long deviceId, String problemDescription) {
@@ -48,6 +53,33 @@ public class ServiceRequestService {
         return savedRequest;
     }
 
+    public ServiceRequest updateRequest(Long requestId, String problemDescription) {
+
+        ServiceRequest request = serviceRequestRepository.findById(requestId)
+                .orElseThrow(() -> new RuntimeException("ServiceRequest not found"));
+
+        request.setProblemDescription(problemDescription);
+
+        return serviceRequestRepository.save(request);
+    }
+
+    public ServiceRequest cancelRequest(Long requestId) {
+
+        ServiceRequest request = serviceRequestRepository.findById(requestId)
+                .orElseThrow(() -> new RuntimeException("ServiceRequest not found"));
+
+        request.setStatus(ServiceRequestStatus.CANCELLED);
+
+        return serviceRequestRepository.save(request);
+    }
+
+    public void deleteRequest(Long requestId) {
+
+        ServiceRequest request = serviceRequestRepository.findById(requestId)
+                .orElseThrow(() -> new RuntimeException("ServiceRequest not found"));
+
+        serviceRequestRepository.delete(request);
+    }
     public ServiceRequest escalate(Long requestId) {
 
         ServiceRequest request = serviceRequestRepository.findById(requestId)

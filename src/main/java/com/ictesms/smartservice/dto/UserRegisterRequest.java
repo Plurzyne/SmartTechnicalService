@@ -5,10 +5,11 @@ import lombok.*;
 @Getter
 @Setter
 public class UserRegisterRequest {
-    private String email;
     private String firstName;
     private String lastName;
+    private String email;
     private String phone;
     private String password;
-    private String role;
+    private boolean isTechnician; // checkbox from frontend
+
 }

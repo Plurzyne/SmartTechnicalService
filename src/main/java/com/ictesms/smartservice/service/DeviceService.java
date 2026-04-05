@@ -33,6 +33,24 @@ public class DeviceService {
         return deviceRepository.save(device);
     }
 
+    public Device updateDevice(Long deviceId, String name, String type) {
+
+        Device device = deviceRepository.findById(deviceId)
+                .orElseThrow(() -> new RuntimeException("Device not found"));
+
+        device.setName(name);
+        device.setType(type);
+
+        return deviceRepository.save(device);
+    }
+
+    public void deleteDevice(Long deviceId) {
+
+        Device device = deviceRepository.findById(deviceId)
+                .orElseThrow(() -> new RuntimeException("Device not found"));
+
+        deviceRepository.delete(device);
+    }
     public List<Device> getDevicesByOwner(Long ownerId) {
         return deviceRepository.findByOwnerId(ownerId);
     }
