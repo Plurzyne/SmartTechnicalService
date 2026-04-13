@@ -20,6 +20,9 @@ public class ServiceRequest {
     @JoinColumn(name = "device_id", nullable = false)
     private Device device;
 
+    @OneToOne(mappedBy = "serviceRequest", cascade = CascadeType.ALL)
+    private Chat chat;
+
     @Column(nullable = false, columnDefinition = "TEXT")
     private String problemDescription;
 

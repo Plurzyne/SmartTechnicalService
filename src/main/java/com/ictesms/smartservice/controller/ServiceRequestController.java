@@ -18,6 +18,11 @@ public class ServiceRequestController {
         this.serviceRequestService = serviceRequestService;
     }
 
+    @GetMapping("/{id}")
+    public ServiceRequest getById(@PathVariable Long id) {
+        return serviceRequestService.getById(id);
+    }
+
     @GetMapping("/user/{userId}")
     public List<ServiceRequest> getByUser(@PathVariable Long userId) {
         return serviceRequestService.getRequestsByUser(userId);

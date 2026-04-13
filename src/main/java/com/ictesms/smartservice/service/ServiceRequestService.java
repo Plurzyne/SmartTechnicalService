@@ -27,6 +27,11 @@ public class ServiceRequestService {
         this.deviceRepository = deviceRepository;
     }
 
+    public ServiceRequest getById(Long id) {
+        return serviceRequestRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Not found"));
+    }
+
     public List<ServiceRequest> getRequestsByUser(Long userId) {
         return serviceRequestRepository.findByUserId(userId);
     }
@@ -49,7 +54,7 @@ public class ServiceRequestService {
         chat.setCreatedAt(LocalDateTime.now());
 
         chatRepository.save(chat);
-
+        savedRequest.setChat(chat);
         return savedRequest;
     }
 

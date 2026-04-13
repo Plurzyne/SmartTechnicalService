@@ -10,8 +10,8 @@ import java.util.List;
 public interface ServiceRequestRepository extends JpaRepository<ServiceRequest, Long> {
     @Query("""
     SELECT sr 
-    FROM service_requests sr 
-    WHERE sr.device.user.id = :userId 
+    FROM ServiceRequest sr 
+    WHERE sr.device.owner.id = :userId 
     ORDER BY sr.id DESC
     """)
     List<ServiceRequest> findByUserId(@Param("userId") Long userId);
